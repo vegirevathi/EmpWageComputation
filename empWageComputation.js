@@ -11,10 +11,7 @@ let totalEmpHrs = 0;
 let totalEmpWage = 0;
 let totalWorkingDays = 0;
 
-while (totalEmpHrs <= MAX_HRS_IN_MONTH &&
-				 totalWorkingDays <= NUM_OF_WORKING_DAYS) {
-	totalWorkingDays++;
-	let empCheck = Math.floor(Math.random() * 10) % 3;
+function getWorkingHours(empCheck) {
 	switch (empCheck) {
 		case IS_PART_TIME:
 			console.log("Employee is Part Time Present for day" +totalWorkingDays);
@@ -28,9 +25,16 @@ while (totalEmpHrs <= MAX_HRS_IN_MONTH &&
 			console.log("Employee is Absent for day" +totalWorkingDays);
 			empHrs = 0;
 	}
-	totalEmpHrs += empHrs;
+	return empHrs;
 }
 
+while (totalEmpHrs <= MAX_HRS_IN_MONTH &&
+				 totalWorkingDays <= NUM_OF_WORKING_DAYS) {
+	totalWorkingDays++;
+	let empCheck = Math.floor(Math.random() * 10) % 3;
+	empHrs = getWorkingHours(empCheck);
+	totalEmpHrs += empHrs;
+}
 totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
 console.log("Employee wage is " +totalEmpWage);
 
