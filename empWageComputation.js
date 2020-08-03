@@ -30,6 +30,7 @@ while (totalEmpHrs <= MAX_HRS_IN_MONTH &&
 	}
 	totalEmpHrs += empHrs;
 }
+
 totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
 console.log("Employee wage is " +totalEmpWage);
 
