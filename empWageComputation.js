@@ -8,18 +8,16 @@ let empHrs = 0;
 let empWage = 0;
 
 let empCheck = Math.floor(Math.random() * 10) % 3;
-if (empCheck == IS_PART_TIME)
-{
-	console.log("Employee is Present");
-	empHrs = 8;
-}
-else if (empCheck == IS_FULL_TIME)
-{
+switch (empCheck) {
+case IS_PART_TIME:
 	console.log("Employee is Part Time Present");
 	empHrs = 4;
-}
-else
-{
+	break;
+case IS_FULL_TIME:
+	console.log("Employee is Full Time Present");
+	empHrs = 8;
+	break;
+default:
 	console.log("Employee is Absent");
 	empHrs = 0;
 }
