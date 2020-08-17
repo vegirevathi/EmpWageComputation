@@ -46,3 +46,4 @@ while (totalEmpHrs <= MAX_HRS_IN_MONTH &&
 totalEmpWage = calcDailyWage(totalEmpHrs);
 console.log("Total Employee wage for the month is " +totalEmpWage);
 
+empWageComputation.js(END)
